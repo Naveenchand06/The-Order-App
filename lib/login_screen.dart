@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/Authentication/auth_email.dart';
 import 'package:hello_world/home_page.dart';
 import 'package:hello_world/signup_screen.dart';
 import 'package:hello_world/user.dart';
-import 'package:toast/toast.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -132,6 +132,8 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: Colors.teal,
                 ),
                 onPressed: () {
+                  AuthEmail.loginWithEmail(email: _email, password: _password);
+
                   // if (_email.contains('@')) {
                   //   print(_email);
                   //   print(_password);
@@ -141,11 +143,11 @@ class _LoginPageState extends State<LoginPage> {
                   //   context,
                   //   duration: 3,
                   // );
-                   Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => User(),
-                        ),
-                      );
+                  //  Navigator.of(context).push(
+                  //       MaterialPageRoute(
+                  //         builder: (context) => User(),
+                  //       ),
+                  //     );
                 },
               )
             ],
