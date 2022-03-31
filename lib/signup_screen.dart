@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/login_screen.dart';
 import 'package:toast/toast.dart';
+import 'package:hello_world/home_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -98,15 +100,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   backgroundColor: Colors.teal,
                 ),
                 onPressed: () {
-                  if (_email.contains('@')) {
-                    print(_email);
-                    print(_password);
-                  }
-                  Toast.show(
-                    'Successfully logged in',
-                    context,
-                    duration: 3,
-                  );
+                  Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                      );
                 },
               )
             ],

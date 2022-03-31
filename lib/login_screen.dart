@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/home_page.dart';
 import 'package:hello_world/signup_screen.dart';
+import 'package:hello_world/user.dart';
 import 'package:toast/toast.dart';
 
 class LoginPage extends StatefulWidget {
@@ -99,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 children: [
                   Text(
-                    'Don\'t hacve an account?',
+                    'Don\'t have an account?',
                     style: TextStyle(
                       fontSize: 15.0,
                       fontWeight: FontWeight.w400,
@@ -130,15 +132,20 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: Colors.teal,
                 ),
                 onPressed: () {
-                  if (_email.contains('@')) {
-                    print(_email);
-                    print(_password);
-                  }
-                  Toast.show(
-                    'Successfully logged in',
-                    context,
-                    duration: 3,
-                  );
+                  // if (_email.contains('@')) {
+                  //   print(_email);
+                  //   print(_password);
+                  // }
+                  // Toast.show(
+                  //   'Successfully logged in',
+                  //   context,
+                  //   duration: 3,
+                  // );
+                   Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => User(),
+                        ),
+                      );
                 },
               )
             ],
