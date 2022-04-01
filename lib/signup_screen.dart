@@ -36,115 +36,117 @@ class _SignUpPageState extends State<SignUpPage> {
               icon: Icon(Icons.arrow_back_ios),
             ),
           ),
-          body: Form(
-            key: _formKey,
-            child: Center(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 30.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Signup.',
-                        style: TextStyle(
-                            fontSize: 30.0, fontWeight: FontWeight.w700)),
-                    SizedBox(
-                      height: 30.0,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Enter Email',
-                        labelText: 'Email',
-                        labelStyle: TextStyle(color: Colors.teal),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.teal,
-                            width: 2.0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.teal,
-                            width: 2.0,
-                          ),
-                        ),
+          body: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Center(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 30.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Signup.',
+                          style: TextStyle(
+                              fontSize: 30.0, fontWeight: FontWeight.w700)),
+                      SizedBox(
+                        height: 30.0,
                       ),
-                      onChanged: (value) {
-                        _email = value;
-                      },
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'This field should not be empty';
-                        }
-                        if (!(value.contains('@'))) {
-                          return 'Please enter valid email';
-                        }
-                      },
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    TextFormField(
-                      obscureText: showPassword,
-                      decoration: InputDecoration(
-                        hintText: 'Enter password',
-                        labelText: 'Password',
-                        labelStyle: TextStyle(color: Colors.teal),
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.remove_red_eye_outlined),
-                          color: Colors.teal,
-                          onPressed: () {
-                            setState(() => showPassword = !showPassword);
-                          },
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.teal,
-                            width: 2.0,
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          hintText: 'Enter Email',
+                          labelText: 'Email',
+                          labelStyle: TextStyle(color: Colors.teal),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.teal,
+                              width: 2.0,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.teal,
+                              width: 2.0,
+                            ),
                           ),
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                        onChanged: (value) {
+                          _email = value;
+                        },
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'This field should not be empty';
+                          }
+                          if (!(value.contains('@'))) {
+                            return 'Please enter valid email';
+                          }
+                        },
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      TextFormField(
+                        obscureText: showPassword,
+                        decoration: InputDecoration(
+                          hintText: 'Enter password',
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: Colors.teal),
+                          suffixIcon: IconButton(
+                            icon: Icon(Icons.remove_red_eye_outlined),
                             color: Colors.teal,
-                            width: 2.0,
+                            onPressed: () {
+                              setState(() => showPassword = !showPassword);
+                            },
+                          ),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.teal,
+                              width: 2.0,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.teal,
+                              width: 2.0,
+                            ),
                           ),
                         ),
+                        onChanged: (value) {
+                          _password = value;
+                        },
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'This field should not be empty';
+                          }
+                          if (value.length <= 4) {
+                            return 'Password length must be greater than 4';
+                          }
+                        },
                       ),
-                      onChanged: (value) {
-                        _password = value;
-                      },
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'This field should not be empty';
-                        }
-                        if (value.length <= 4) {
-                          return 'Password length must be greater than 4';
-                        }
-                      },
-                    ),
-                    SizedBox(
-                      height: 40.0,
-                    ),
-                    OutlinedButton(
-                      child: Text('Signup'),
-                      style: OutlinedButton.styleFrom(
-                        primary: Colors.white,
-                        backgroundColor: Colors.teal,
+                      SizedBox(
+                        height: 40.0,
                       ),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          print('Elam crt ah iruku');
-                        }
-                        // AuthEmail.createNewUser(
-                        //     email: _email, password: _password);
-                        // Navigator.of(context).push(
-                        //   MaterialPageRoute(
-                        //     builder: (context) => LoginPage(),
-                        //   ),
-                        // );
-                      },
-                    )
-                  ],
+                      OutlinedButton(
+                        child: Text('Signup'),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: Colors.teal,
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            print('Elam crt ah iruku');
+                          }
+                          // AuthEmail.createNewUser(
+                          //     email: _email, password: _password);
+                          // Navigator.of(context).push(
+                          //   MaterialPageRoute(
+                          //     builder: (context) => LoginPage(),
+                          //   ),
+                          // );
+                        },
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
