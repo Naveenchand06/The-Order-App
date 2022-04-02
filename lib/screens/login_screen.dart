@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/Authentication/auth_email.dart';
-import 'package:hello_world/home_page.dart';
-import 'package:hello_world/signup_screen.dart';
+import 'package:hello_world/screens/buyer/home_page.dart';
+import 'package:hello_world/screens/signup_screen.dart';
 import 'package:hello_world/user.dart';
 
 class LoginPage extends StatefulWidget {

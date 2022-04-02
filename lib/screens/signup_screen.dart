@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/Authentication/auth_email.dart';
-import 'package:hello_world/login_screen.dart';
-import 'package:hello_world/home_page.dart';
+import 'package:hello_world/screens/login_screen.dart';
+import 'package:hello_world/screens/buyer/home_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);

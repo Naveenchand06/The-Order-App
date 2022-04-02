@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/home_page.dart';
+import 'package:hello_world/screens/buyer/home_page.dart';
 
 class Canteen extends StatefulWidget {
   const Canteen({Key? key}) : super(key: key);
