@@ -36,10 +36,10 @@ class _SignUpPageState extends State<SignUpPage> {
               icon: Icon(Icons.arrow_back_ios),
             ),
           ),
-          body: SingleChildScrollView(
-            child: Form(
-              key: _formKey,
-              child: Center(
+          body: Center(
+            child: SingleChildScrollView(
+              child: Form(
+                key: _formKey,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 30.0),
                   child: Column(
@@ -135,9 +135,10 @@ class _SignUpPageState extends State<SignUpPage> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             print('Elam crt ah iruku');
+                            AuthEmail.createNewUser(
+                                email: _email, password: _password);
                           }
-                          // AuthEmail.createNewUser(
-                          //     email: _email, password: _password);
+
                           // Navigator.of(context).push(
                           //   MaterialPageRoute(
                           //     builder: (context) => LoginPage(),
