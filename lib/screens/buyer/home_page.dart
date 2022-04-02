@@ -1,42 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/canteen.dart';
-import 'package:hello_world/canteen_seller.dart';
-import 'package:hello_world/mess.dart';
-import 'package:hello_world/mess_seller.dart';
-import 'package:hello_world/signup_screen.dart';
-import 'package:hello_world/stationery.dart';
-import 'package:hello_world/stationery_seller.dart';
+import 'package:hello_world/screens/buyer/canteen.dart';
+import 'package:hello_world/screens/buyer/mess.dart';
+import 'package:hello_world/screens/signup_screen.dart';
+import 'package:hello_world/screens/buyer/stationery.dart';
 
-class HomeSeller extends StatefulWidget {
-  const HomeSeller({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomeSeller> createState() => _HomeSellerState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeSellerState extends State<HomeSeller> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Seller Mart'),
+        title: Text("Mart"),
+        centerTitle: true,
         backgroundColor: Colors.teal,
       ),
       drawer: Drawer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
-            Padding(padding: EdgeInsets.fromLTRB(10.0, 60.0, 0.0, 0.0)),
+            ListTile(
+              title: Text(
+                "Canteen",
+                style: TextStyle(
+                  color: Colors.teal,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                "Canteen",
+                style: TextStyle(
+                  color: Colors.teal,
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text(
+                "Canteen",
+                style: TextStyle(
+                  color: Colors.teal,
+                ),
+              ),
+            ),
             OutlinedButton(
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => CanteenSeller(),
+                    builder: (context) => Canteen(),
                   ),
                 );
               },
               child: Text(
-                "Canteen Seller",
+                "Canteen",
                 style: TextStyle(
                   color: Colors.teal,
                 ),
@@ -49,12 +70,12 @@ class _HomeSellerState extends State<HomeSeller> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => MessSeller(),
+                    builder: (context) => Mess(),
                   ),
                 );
               },
               child: Text(
-                "Mess Seller",
+                "Mess",
                 style: TextStyle(
                   color: Colors.teal,
                 ),
@@ -68,12 +89,12 @@ class _HomeSellerState extends State<HomeSeller> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => StationerySeller(),
+                    builder: (context) => Stationery(),
                   ),
                 );
               },
               child: Text(
-                "Stationery Seller",
+                "Stationery",
                 style: TextStyle(
                   color: Colors.teal,
                 ),

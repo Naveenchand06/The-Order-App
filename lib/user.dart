@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/home_page.dart';
-import 'package:hello_world/home_seller.dart';
+import 'package:hello_world/screens/buyer/home_page.dart';
+import 'package:hello_world/screens/seller/home_seller.dart';
 
 class User extends StatefulWidget {
   const User({ Key? key }) : super(key: key);
